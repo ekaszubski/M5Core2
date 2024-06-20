@@ -31,6 +31,7 @@ void AXP2101::set_bus_3v3(uint16_t voltage) {
 }
 
 void AXP2101::set_lcd_back_light_voltage(uint16_t voltage) {
+    _wire->endTransmission();
     if (!voltage) {
         set_bldo1_on_off(false);
     } else {
